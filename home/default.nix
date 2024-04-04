@@ -8,6 +8,11 @@
 
   home.username = "marcin-jamroz";
   home.homeDirectory = "/home/marcin-jamroz";
+  home.sessionVariables = {
+    EDITOR = "vim";
+    BROWSER = "firefox";
+    TERMINAL = "kitty";
+  };
 
   programs.git = {
     enable = true;
@@ -19,6 +24,7 @@
     userName = "marcin-jamroz";
     userEmail = "17850284+marcin-jamroz@users.noreply.github.com";
   };
+
 
   # This value determines the home Manager release that your
   # configuration is compatible with. This helps avoid breakage

@@ -6,13 +6,18 @@
 
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [ 
+      ./modules/nix-ld.nix
+      # Include the results of the hardware scan.
       ./hardware-configuration.nix
     ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
+  boot.loader.systemd-boot.consoleMode = "max";
   boot.loader.efi.canTouchEfiVariables = true;
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+  
 
   networking.hostName = "marcin-jamroz"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -90,7 +95,6 @@
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
       firefox
-    #  thunderbird
     ];
   };
 
@@ -111,9 +115,8 @@
     wget
   ];
 
-  # Set the default editor to vim
+   # Set the default editor to vim
   environment.variables.EDITOR = "vim";
-
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
