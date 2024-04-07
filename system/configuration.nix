@@ -7,7 +7,7 @@
 {
   imports =
     [ 
-      ./modules/nix-ld.nix
+      ../modules/nix-ld.nix
       # Include the results of the hardware scan.
       ./hardware-configuration.nix
     ];
