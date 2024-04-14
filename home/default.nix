@@ -1,19 +1,25 @@
-{ config, pkgs, ... }:
+{ config, pkgs, gtkThemeFromScheme, inputs, ... }:
 
 {
 
   imports = [
+    inputs.nix-colors.homeManagerModules.default
+    inputs.hyprland.homeManagerModules.default
     ./shell
     ./desktop
   ];
 
   home.username = "marcin-jamroz";
   home.homeDirectory = "/home/marcin-jamroz";
+  home.stateVersion = "23.11";
   home.sessionVariables = {
     EDITOR = "vim";
     BROWSER = "firefox";
     TERMINAL = "kitty";
   };
+
+  # Set The Colorscheme
+  colorScheme = inputs.nix-colors.colorSchemes.dracula;
 
   programs.git = {
     enable = true;
@@ -35,7 +41,6 @@
   # You can update home Manager without changing this value. See
   # the home Manager release notes for a list of state version
   # changes in each release.
-  home.stateVersion = "23.11";
 
   # Let home Manager install and manage itself.
   programs.home-manager.enable = true;

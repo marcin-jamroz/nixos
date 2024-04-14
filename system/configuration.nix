@@ -8,7 +8,6 @@
   imports =
     [ 
       ../modules/nix-ld.nix
-      ../modules/hyprland.nix
       # Include the results of the hardware scan.
       ./hardware-configuration.nix
     ];
@@ -102,8 +101,17 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  # Enable the Flakes feature and the accompanying new nix command-line tool
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  # Optimization settings and garbage collection automation
+  nix = {
+    settings = {
+      auto-optimise-store = true;
+      experimental-features = [ "nix-command" "flakes" ];
+      substituters = ["https://hyprland.cachix.org"];
+      trusted-public-keys = [
+        "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
+      ];
+    };
+  };
 
 
   # List packages installed in system profile. To search, run:
