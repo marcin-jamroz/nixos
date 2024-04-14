@@ -14,9 +14,21 @@
 
  };
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs: {
+  outputs = { self, nixpkgs, home-manager, ... }@inputs: 
+  let 
+    system = "x86_64-linux";
+    pkgs = import nixpkgs {
+      inherit system;
+      config = {
+	    allowUnfree = true;
+      };
+    };
+  in {
     nixosConfigurations.marcin-jamroz = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
+      specialArgs = { 
+        inherit system;
+        inherit inputs; 
+      };
       modules = [
         # Import the previous configuration.nix we used,
         # so the old configuration file still takes effect
@@ -29,7 +41,7 @@
             home-manager.useUserPackages = true;
             home-manager.extraSpecialArgs = {
               inherit inputs;
-              inherit (inputs.nix-colors.lib-contrib {inherit nixpkgs;}) gtkThemeFromScheme;
+              inherit (inputs.nix-colors.lib-contrib {inherit pkgs;}) gtkThemeFromScheme;
             };
             home-manager.users.marcin-jamroz = import ./home;
           }

@@ -2,14 +2,16 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ config, pkgs, options, inputs, ... }:
 
 {
   imports =
-    [ 
-      ../modules/nix-ld.nix
-      # Include the results of the hardware scan.
+    [
       ./hardware-configuration.nix
+      #./modules/nix-ld.nix
+      #./modules/display-manager.nix
+      #./modules/packages.nix
+      ./modules
     ];
 
   # Bootloader.
@@ -20,6 +22,7 @@
   
 
   networking.hostName = "marcin-jamroz"; # Define your hostname.
+  networking.timeServers = options.networking.timeServers.default ++ [ "pool.ntp.org" ];
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
@@ -56,13 +59,13 @@
   services.xserver.enable = true;
 
   # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm.enable = true;
+  # services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
 
   # Configure keymap in X11
-  services.xserver = {
-    layout = "us";
-    xkbVariant = "";
+  services.xserver.xkb = {
+    layout = "pl";
+    variant = "";
   };
 
   # Enable CUPS to print documents.
@@ -93,13 +96,8 @@
     isNormalUser = true;
     description = "Marcin Jamroz";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-      firefox
-    ];
+    packages = with pkgs; [];
   };
-
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
 
   # Optimization settings and garbage collection automation
   nix = {
@@ -112,17 +110,6 @@
       ];
     };
   };
-
-
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    curl
-    git
-    neofetch
-    vim
-    wget
-  ];
 
    # Set the default editor to vim
   environment.variables.EDITOR = "vim";
