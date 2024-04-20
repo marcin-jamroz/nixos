@@ -22,7 +22,6 @@
     yad
     playerctl
     nh
-    firefox
     vim
   ];
 

@@ -7,6 +7,7 @@
     inputs.hyprland.homeManagerModules.default
     ./shell
     ./desktop
+    ./packages.nix
   ];
 
   home.username = "marcin-jamroz";
