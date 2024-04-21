@@ -18,6 +18,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.systemd-boot.consoleMode = "max";
   boot.loader.efi.canTouchEfiVariables = true;
+  boot.supportedFilesystems = [ "ntfs" ];
   boot.kernelModules = [ "nct6775" ];
   boot.kernelPackages = pkgs.linuxPackages_latest;
   

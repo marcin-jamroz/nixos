@@ -8,5 +8,6 @@
     ./services.nix
     ./steam.nix
     ./polkit.nix
+    ./thunar.nix
   ];
 }
