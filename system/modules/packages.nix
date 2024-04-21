@@ -23,7 +23,6 @@
     playerctl
     nh
     vim
-    bottles
   ];
 
   programs = {

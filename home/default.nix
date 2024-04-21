@@ -7,6 +7,7 @@
     inputs.hyprland.homeManagerModules.default
     ./shell
     ./desktop
+    ./game
     ./packages.nix
   ];
 

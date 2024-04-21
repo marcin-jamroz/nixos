@@ -9,5 +9,8 @@
     ./steam.nix
     ./polkit.nix
     ./thunar.nix
+    ./opengl.nix
+    ./amd-gpu.nix
+   # ./flatpak.nix
   ];
 }
