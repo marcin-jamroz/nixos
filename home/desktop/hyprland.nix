@@ -26,6 +26,20 @@ in with lib; {
           "blueman-applet"
           "swayidle -w timeout 720 'swaylock -f' timeout 800 'hyprctl dispatch dpms off' resume 'hyprctl dispatch dpms on' before-sleep 'swaylock -f -c 000000'"
         ];
+        env = [
+          "NIXOS_OZONE_WL, 1"
+          "NIXPKGS_ALLOW_UNFREE, 1"
+          "XDG_CURRENT_DESKTOP, Hyprland"
+          "XDG_SESSION_TYPE, wayland"
+          "XDG_SESSION_DESKTOP, Hyprland"
+          "GDK_BACKEND, wayland"
+          "CLUTTER_BACKEND, wayland"
+          "SDL_VIDEODRIVER, x11"
+          "QT_QPA_PLATFORM, wayland"
+          "QT_WAYLAND_DISABLE_WINDOWDECORATION, 1"
+          "QT_AUTO_SCREEN_SCALE_FACTOR, 1"
+          "MOZ_ENABLE_WAYLAND, 1"
+        ];
         monitor = 
           [ 
             "DP-1, preffered, 1920x0, 1"
