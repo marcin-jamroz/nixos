@@ -5,5 +5,7 @@
     firefox
     gnome.file-roller
     discord
+    qbittorrent
+    vlc
   ];
 }
