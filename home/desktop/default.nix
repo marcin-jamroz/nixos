@@ -9,8 +9,9 @@
     ./swaylock.nix
     ./swaync.nix
     ./gtk-qt.nix
-    ./packages.nix
+    ./hyprpaper.nix
 
+    ./packages.nix
     ./files.nix
   ];
 }

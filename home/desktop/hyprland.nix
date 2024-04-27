@@ -20,6 +20,7 @@ in with lib; {
         "$terminal" = "kitty";
         exec-once = [
           "$POLKIT_BIN"
+          "hyprpaper"
           "waybar"
           "swaync"
           "nm-applet"
@@ -69,6 +70,7 @@ in with lib; {
           workspace_swipe_fingers = 3;
         };
         misc = {
+          disable_hyprland_logo = true;
           mouse_move_enables_dpms = true;
           key_press_enables_dpms = false;
         };
