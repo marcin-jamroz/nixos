@@ -1,7 +1,8 @@
-{ config, lib, ...}: 
+{ config, lib, pkgs, inputs, ...}: 
 
 let
   theme = config.colorScheme.palette;
+  split-workspaces = inputs.split-monitor-workspaces;
 in with lib; {
    xdg = {
      userDirs = {
@@ -15,6 +16,9 @@ in with lib; {
       xwayland.enable = true;
       systemd.variables = ["--all"];
       systemd.enable = true;
+      plugins = [
+        split-workspaces.packages.${pkgs.system}.split-monitor-workspaces
+      ];
       settings = {
         "$mod" = "SUPER";
         "$terminal" = "kitty";
@@ -46,6 +50,29 @@ in with lib; {
             "DP-1, preffered, 1920x0, 1"
             "HDMI-A-2, preffered, 0x0, 1"
           ];
+        workspace = [
+          "1, monitor:DP-1"
+          "2, monitor:DP-1"
+          "3, monitor:DP-1"
+          "4, monitor:DP-1"
+          "5, monitor:DP-1"
+          "6, monitor:DP-1"
+          "7, monitor:DP-1"
+          "8, monitor:DP-1"
+          "9, monitor:DP-1"
+          "10, monitor:DP-1"
+
+          "11, monitor:HDMI-A-2"
+          "12, monitor:HDMI-A-2"
+          "13, monitor:HDMI-A-2"
+          "14, monitor:HDMI-A-2"
+          "15, monitor:HDMI-A-2"
+          "16, monitor:HDMI-A-2"
+          "17, monitor:HDMI-A-2"
+          "18, monitor:HDMI-A-2"
+          "19, monitor:HDMI-A-2"
+          "20, monitor:HDMI-A-2" 
+        ];
         general = {
           gaps_in = 6;
           gaps_out = 8;
@@ -156,30 +183,32 @@ in with lib; {
             "$mod, l, movefocus, r"
             "$mod, k, movefocus, u"
             "$mod, j, movefocus, d"
-            "$mod, 1, workspace, 1"
-            "$mod, 2, workspace, 2"
-            "$mod, 3, workspace, 3"
-            "$mod, 4, workspace, 4"
-            "$mod, 5, workspace, 5"
-            "$mod, 6, workspace, 6"
-            "$mod, 7, workspace, 7"
-            "$mod, 8, workspace, 8"
-            "$mod, 9, workspace, 9"
-            "$mod, 0, workspace, 10"
-            "$modSHIFT, 1, movetoworkspace, 1"
-            "$modSHIFT, 2, movetoworkspace, 2"
-            "$modSHIFT, 3, movetoworkspace, 3"
-            "$modSHIFT, 4, movetoworkspace, 4"
-            "$modSHIFT, 5, movetoworkspace, 5"
-            "$modSHIFT, 6, movetoworkspace, 6"
-            "$modSHIFT, 7, movetoworkspace, 7"
-            "$modSHIFT, 8, movetoworkspace, 8"
-            "$modSHIFT, 9, movetoworkspace, 9"
-            "$modSHIFT, 0, movetoworkspace, 10"
-            "$modCONTROL, right, workspace, e+1"
-            "$modCONTROL, left, workspace, e-1"
-            "$mod, mouse_down, workspace, e+1"
-            "$mod, mouse_up, workspace, e-1"
+            "$mod, 1, split-workspace, 1"
+            "$mod, 2, split-workspace, 2"
+            "$mod, 3, split-workspace, 3"
+            "$mod, 4, split-workspace, 4"
+            "$mod, 5, split-workspace, 5"
+            "$mod, 6, split-workspace, 6"
+            "$mod, 7, split-workspace, 7"
+            "$mod, 8, split-workspace, 8"
+            "$mod, 9, split-workspace, 9"
+            "$mod, 0, split-workspace, 10"
+            "$modSHIFT, 1, split-movetoworkspace, 1"
+            "$modSHIFT, 2, split-movetoworkspace, 2"
+            "$modSHIFT, 3, split-movetoworkspace, 3"
+            "$modSHIFT, 4, split-movetoworkspace, 4"
+            "$modSHIFT, 5, split-movetoworkspace, 5"
+            "$modSHIFT, 6, split-movetoworkspace, 6"
+            "$modSHIFT, 7, split-movetoworkspace, 7"
+            "$modSHIFT, 8, split-movetoworkspace, 8"
+            "$modSHIFT, 9, split-movetoworkspace, 9"
+            "$modSHIFT, 0, split-movetoworkspace, 10"
+            "$modCONTROL, right, split-workspace, r+1"
+            "$modCONTROL, left, split-workspace, r-1"
+            "$modCONTROLshift, right, split-movetoworkspace, r+1"
+            "$modCONTROLshift, left, split-movetoworkspace, r-1" 
+            "$mod, mouse_down, split-workspace, r+1"
+            "$mod, mouse_up, split-workspace, r-1"
           ]; 
       };
     };
