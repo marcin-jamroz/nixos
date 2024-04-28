@@ -5,6 +5,7 @@
   imports = [
     inputs.nix-colors.homeManagerModules.default
     inputs.hyprland.homeManagerModules.default
+    inputs.hyprlock.homeManagerModules.default
     ./shell
     ./desktop
     ./game

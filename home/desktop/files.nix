@@ -10,4 +10,9 @@
     source = ./files/hyprpaper;
     recursive = true;
   };
+  home.file.".config/hypr/hyprlock" = {
+    source = ./files/hyprpaper;
+    recursive = true;
+  };
+
 }

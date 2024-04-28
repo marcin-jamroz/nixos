@@ -15,6 +15,9 @@
       url = "github:Duckonaut/split-monitor-workspaces";
       inputs.hyprland.follows = "hyprland";
     };
+    hyprlock = {
+      url = "github:hyprwm/hyprlock";
+    };
  };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs: 
