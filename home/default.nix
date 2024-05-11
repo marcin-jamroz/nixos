@@ -6,6 +6,7 @@
     inputs.nix-colors.homeManagerModules.default
     inputs.hyprland.homeManagerModules.default
     inputs.hyprlock.homeManagerModules.default
+    inputs.hypridle.homeManagerModules.default
     ./shell
     ./desktop
     ./game

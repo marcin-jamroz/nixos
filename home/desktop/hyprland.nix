@@ -29,7 +29,7 @@ in with lib; {
           "swaync"
           "nm-applet"
           "blueman-applet"
-          "swayidle -w timeout 720 'swaylock -f' timeout 800 'hyprctl dispatch dpms off' resume 'hyprctl dispatch dpms on' before-sleep 'swaylock -f -c 000000'"
+        #  "swayidle -w timeout 720 'swaylock -f' timeout 800 'hyprctl dispatch dpms off' resume 'hyprctl dispatch dpms on' before-sleep 'swaylock -f -c 000000'"
         ];
         env = [
           "NIXOS_OZONE_WL, 1"
@@ -159,7 +159,7 @@ in with lib; {
           [
             "$mod, F, fullscreen"
             "$mod, T, exec, kitty"
-            "$mod, L, exec, swaylock"
+            "$mod, L, exec, hyprlock"
             "$mod, S, exec, screenshot"
             "$modSHIFT, SPACE, movetoworkspace, special"
             "$mod, SPACE, togglespecialworkspace"
