@@ -161,6 +161,8 @@ in with lib; {
             "$mod, T, exec, kitty"
             "$mod, L, exec, hyprlock"
             "$mod, S, exec, screenshot"
+            "$modSHIFT, O, exec, hyprctl keyword monitor DP-1,preffered,2000x0,1"
+            "$mod, O, exec, hyprctl keyword monitor DP-1,preffered,1920x0,1"
             "$modSHIFT, SPACE, movetoworkspace, special"
             "$mod, SPACE, togglespecialworkspace"
             "$mod, Q, killactive"

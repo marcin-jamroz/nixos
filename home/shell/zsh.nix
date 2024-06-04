@@ -15,6 +15,7 @@
       HISTSIZE=1000
       SAVEHIST=1000
       setopt autocd nomatch
+      setopt HIST_IGNORE_DUPS
       unsetopt beep extendedglob notify
       autoload -Uz compinit
       compinit

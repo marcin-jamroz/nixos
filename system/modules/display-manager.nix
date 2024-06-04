@@ -3,8 +3,9 @@
 {
   services.xserver = {
     enable = true;
-    libinput.enable = true;
   };
+
+  services.libinput.enable = true;
 
   services.displayManager.sddm = {
       enable = true;
