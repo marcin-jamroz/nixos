@@ -11,6 +11,7 @@
     ./thunar.nix
     ./opengl.nix
     ./amd-gpu.nix
+    ./virtualisation.nix
    # ./flatpak.nix
   ];
 }
