@@ -121,7 +121,6 @@ in with lib; {
           ];
         };
         decoration = {
-          rounding = 10;
           drop_shadow = false;
           blur = {
             enabled = true;
@@ -141,7 +140,7 @@ in with lib; {
           preserve_split = true;
         };
         master = {
-          new_is_master = true;
+          new_status = "master";
         };
         bindr = ["$mod, $mod_L, exec, rofi-launcher"];
         binde = 

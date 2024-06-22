@@ -7,7 +7,7 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     nix-colors.url = "github:misterio77/nix-colors";
     hyprland = { 
-      url = "https://github.com/hyprwm/Hyprland?ref=refs/heads/main&rev=9994b73ad0af5c9ba5fc4058234cea77d0a1ddb1";
+      url = "https://github.com/hyprwm/Hyprland";
       type = "git";
       submodules = true;
     };

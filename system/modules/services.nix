@@ -14,6 +14,7 @@
   #    pkgs.xdg-desktop-portal
   #  ];
   #};
+
   xdg.portal = {
     enable = true;
     extraPortals = [ 
