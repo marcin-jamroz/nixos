@@ -1,5 +1,5 @@
 { config, pkgs, ...}: {
   imports = [
-    ./bottles.nix  
+ #   ./bottles.nix  
   ];
 }

@@ -14,7 +14,8 @@
   #    pkgs.xdg-desktop-portal
   #  ];
   #};
-
+  # services.zerotierone.enable = true;
+  services.flatpak.enable = true;
   xdg.portal = {
     enable = true;
     extraPortals = [ 
