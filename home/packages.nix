@@ -7,5 +7,8 @@
     discord
     qbittorrent
     vlc
+    calibre
+    libreoffice
+    gedit
   ];
 }
