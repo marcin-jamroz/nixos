@@ -9,7 +9,7 @@
     ./steam.nix
     ./polkit.nix
     ./thunar.nix
-    ./opengl.nix
+    ./graphics.nix
     ./amd-gpu.nix
     ./virtualisation.nix
    # ./flatpak.nix
