@@ -11,4 +11,9 @@
     libreoffice
     gedit
   ];
+  home.file.".blerc".text = ''
+      bleopt indent_offset=10
+      ble-bind -f up 'history-search-backward immediate-accept'
+      ble-bind -f down 'history-search-forward immediate-accept'
+    '';
 }

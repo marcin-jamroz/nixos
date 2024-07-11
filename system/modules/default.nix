@@ -12,6 +12,7 @@
     ./graphics.nix
     ./amd-gpu.nix
     ./virtualisation.nix
+    ./shell.nix
    # ./flatpak.nix
   ];
 }

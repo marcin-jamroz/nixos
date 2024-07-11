@@ -78,7 +78,6 @@
   users.users.marcin-jamroz = {
     isNormalUser = true;
     description = "Marcin Jamroz";
-    shell = pkgs.zsh;
     ignoreShellProgramCheck = true;
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [];

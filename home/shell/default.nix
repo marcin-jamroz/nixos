@@ -1,7 +1,8 @@
 { config, pkgs, ...}: {
   imports = [
-    ./starship.nix
+   # ./starship.nix
     ./kitty.nix
-    ./zsh.nix
+   # ./zsh.nix
+    ./bash.nix
   ];
 }
