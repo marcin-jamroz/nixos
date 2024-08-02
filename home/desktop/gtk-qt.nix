@@ -2,13 +2,13 @@
 
 {
   # Configure Cursor Theme
- # home.pointerCursor = {
- #   gtk.enable = true;
- #   x11.enable = true;
- #   package = pkgs.bibata-cursors;
- #   name = "Bibata-Modern-Ice";
- #   size = 24;
- # };
+  home.pointerCursor = {
+    gtk.enable = true;
+    x11.enable = true;
+    package = pkgs.bibata-cursors;
+    name = "Bibata-Modern-Ice";
+    size = 28;
+  };
 
   # Theme GTK
   gtk = {
