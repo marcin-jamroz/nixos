@@ -4,8 +4,6 @@
   home.packages = with pkgs; [
     firefox
     file-roller
-    discord
-    webcord
     qbittorrent
     vlc
     calibre
