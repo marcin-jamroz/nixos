@@ -9,5 +9,6 @@
     calibre
     libreoffice
     gedit
+    mangohud
   ];
 }
