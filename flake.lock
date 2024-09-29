@@ -112,48 +112,16 @@
         "xdph": "xdph"
       },
       "locked": {
-        "lastModified": 1727527591,
-        "narHash": "sha256-8Mrz/pH+zknWtY25XOKvsfx9KZRdST/0VrjKXKHvZSk=",
-        "ref": "refs/heads/main",
-        "rev": "6f313de952311282e82461a342c74ea702d9f13a",
-        "revCount": 5274,
-        "submodules": true,
-        "type": "git",
-        "url": "https://github.com/hyprwm/Hyprland"
-      },
-      "original": {
-        "submodules": true,
-        "type": "git",
-        "url": "https://github.com/hyprwm/Hyprland"
-      }
-    },
-    "hyprland-plugins": {
-      "inputs": {
-        "hyprland": [
-          "hyprland"
-        ],
-        "nixpkgs": [
-          "hyprland-plugins",
-          "hyprland",
-          "nixpkgs"
-        ],
-        "systems": [
-          "hyprland-plugins",
-          "hyprland",
-          "systems"
-        ]
-      },
-      "locked": {
-        "lastModified": 1727258890,
-        "narHash": "sha256-/55TVManE/J19LSzXtUNhHUpeouRqZxM08ZdWvJrNoA=",
+        "lastModified": 1727549598,
+        "narHash": "sha256-gDMRiCxzZTxr7i8Z3poI5tqj/kasGzUgTTcEwQgu/GQ=",
         "owner": "hyprwm",
-        "repo": "hyprland-plugins",
-        "rev": "4fcb465c9d771f4ae1f451e8d953250d16eead70",
+        "repo": "Hyprland",
+        "rev": "d73c14751ad40fd54d93baac2226f550142b0e74",
         "type": "github"
       },
       "original": {
         "owner": "hyprwm",
-        "repo": "hyprland-plugins",
+        "repo": "Hyprland",
         "type": "github"
       }
     },
@@ -373,7 +341,6 @@
       "inputs": {
         "home-manager": "home-manager",
         "hyprland": "hyprland",
-        "hyprland-plugins": "hyprland-plugins",
         "nix-colors": "nix-colors",
         "nixpkgs": "nixpkgs_2",
         "split-monitor-workspaces": "split-monitor-workspaces"
