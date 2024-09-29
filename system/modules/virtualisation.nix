@@ -1,5 +1,5 @@
 { pkgs, config, lib, ... }:
 
 {
-  virtualisation.waydroid.enable = true;
+  virtualisation.waydroid.enable = false;
 }
