@@ -10,5 +10,6 @@
     libreoffice
     gedit
     mangohud
+    discord
   ];
 }
