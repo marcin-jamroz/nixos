@@ -11,5 +11,6 @@
     gedit
     mangohud
     discord
+    vesktop
   ];
 }

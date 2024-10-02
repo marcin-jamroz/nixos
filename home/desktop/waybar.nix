@@ -87,15 +87,15 @@ in with lib; {
       "custom/gpu_usage" = {
         interval = 10;
         format = "󰖺 {}%";
-        exec = "cat /sys/class/hwmon/hwmon4/device/gpu_busy_percent";
+        exec = "cat /sys/class/hwmon/hwmon6/device/gpu_busy_percent";
       };      
       "temperature#gpu" = {
-        hwmon-path = "/sys/class/hwmon/hwmon4/temp2_input";
+        hwmon-path = "/sys/class/hwmon/hwmon6/temp2_input";
       };
       "custom/gpu_fan" = {
         interval = 10;
         format = "{}r";
-        exec = "cat /sys/class/hwmon/hwmon4/fan1_input";
+        exec = "cat /sys/class/hwmon/hwmon6/fan1_input";
       };     
       "hyprland/window" = {
       	max-length = 25;
