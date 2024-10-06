@@ -9,8 +9,5 @@
     calibre
     libreoffice
     gedit
-    mangohud
-    discord
-    vesktop
   ];
 }

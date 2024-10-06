@@ -2,6 +2,9 @@
 
 {
   home.packages = with pkgs; [
-    bottles 
+    mangohud
+    discord
+    vesktop
+    protonup-qt
   ];
 }
