@@ -8,6 +8,7 @@
     ./shell
     ./desktop
     ./game
+    ./code
     ./packages.nix
   ];
 

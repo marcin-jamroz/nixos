@@ -5,7 +5,7 @@
 { config, pkgs, options, inputs, ... }:
 
 {
-  imports =
+   imports =
     [
       ./hardware-configuration.nix
       #./modules/nix-ld.nix
