@@ -1,11 +1,14 @@
-{ lib, qtbase, qtsvg
-, qtgraphicaleffects
-, qtquickcontrols2
-, wrapQtAppsHook
-, stdenvNoCC
-, fetchFromGitHub
+{
+  qtbase,
+  qtsvg,
+  qtgraphicaleffects,
+  qtquickcontrols2,
+  wrapQtAppsHook,
+  stdenvNoCC,
+  fetchFromGitHub,
 }:
-stdenvNoCC.mkDerivation rec {
+
+stdenvNoCC.mkDerivation {
   pname = "tokyo-night-sddm";
   version = "1..0";
   dontBuild = true;
@@ -31,4 +34,3 @@ stdenvNoCC.mkDerivation rec {
     cp -aR $src $out/share/sddm/themes/tokyo-night-sddm
   '';
 }
-

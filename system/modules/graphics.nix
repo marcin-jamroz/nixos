@@ -1,4 +1,4 @@
-{ pkgs, config, lib, ... }:
+{ pkgs, ... }:
 
 {
   # OpenGL
@@ -11,4 +11,3 @@
     ];
   };
 }
-

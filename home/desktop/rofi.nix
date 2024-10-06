@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   programs.rofi = {
@@ -9,6 +9,6 @@
       modes = "window,drun,run,combi";
       combi-modes = "window,drun,run";
     };
-    
+
   };
 }

@@ -1,4 +1,4 @@
-{ pkgs, config, inputs, ... }:
+{ pkgs, ... }:
 
 {
   # Allow unfree packages
@@ -7,7 +7,7 @@
   # List System Programs
   environment.systemPackages = with pkgs; [
     wget
-    curl 
+    curl
     git
     neofetch
     polkit_gnome
@@ -17,7 +17,7 @@
     libnotify
     wl-clipboard
     brightnessctl
-    swappy 
+    swappy
     networkmanagerapplet
     yad
     playerctl
@@ -26,4 +26,3 @@
     feh
   ];
 }
-

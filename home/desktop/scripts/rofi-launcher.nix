@@ -8,4 +8,3 @@ pkgs.writeShellScriptBin "rofi-launcher" ''
   fi
   rofi -show combi
 ''
-

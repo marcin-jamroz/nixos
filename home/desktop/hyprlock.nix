@@ -1,16 +1,17 @@
-{ pkgs, config, inputs, ... }:
+{ config, inputs, ... }:
 
 let
   palette = config.colorScheme.palette;
   hexToRgbString = inputs.nix-colors.lib.conversions.hexToRGBString;
-in {
+in
+{
   programs.hyprlock = {
     enable = true;
     settings = {
       general = {
         hide_cursor = true;
       };
-    
+
       background = [
         {
           monitor = "";
@@ -18,7 +19,7 @@ in {
           color = ''rgb(${hexToRgbString ", " palette.base02})'';
         }
       ];
-    
+
       input-field = [
         {
           monitor = "";
@@ -31,14 +32,14 @@ in {
           numlock_color = ''rgb(${hexToRgbString ", " palette.base08})'';
           outline_thickness = 3;
           outer_color = ''rgb(${hexToRgbString ", " palette.base0C})'';
-          
+
           size = "200, 50";
           position = "0, -415";
           halign = "center";
           valign = "center";
         }
       ];
-      
+
       label = [
         {
           monitor = "";
@@ -59,13 +60,13 @@ in {
           halign = "center";
           valign = "center";
           position = "0, 450";
-        } 
+        }
         {
           monitor = "";
           text = ''cmd[] echo "<span foreground='##${palette.base0C}'>$(date '+%A, %e %B %Y')</span>"'';
           color = ''rgb(${hexToRgbString ", " palette.base0C})'';
           font_size = 25;
-      
+
           halign = "center";
           valign = "center";
           position = "0, 350";

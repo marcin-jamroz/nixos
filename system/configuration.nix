@@ -2,17 +2,16 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, options, inputs, ... }:
+{ pkgs, options, ... }:
 
 {
-   imports =
-    [
-      ./hardware-configuration.nix
-      #./modules/nix-ld.nix
-      #./modules/display-manager.nix
-      #./modules/packages.nix
-      ./modules
-    ];
+  imports = [
+    ./hardware-configuration.nix
+    #./modules/nix-ld.nix
+    #./modules/display-manager.nix
+    #./modules/packages.nix
+    ./modules
+  ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -21,7 +20,6 @@
   boot.supportedFilesystems = [ "ntfs" ];
   boot.kernelModules = [ "nct6775" ];
   boot.kernelPackages = pkgs.linuxPackages_latest;
-  
 
   networking.hostName = "marcin-jamroz"; # Define your hostname.
   networking.timeServers = options.networking.timeServers.default ++ [ "pool.ntp.org" ];
@@ -81,29 +79,35 @@
     isNormalUser = true;
     description = "Marcin Jamroz";
     ignoreShellProgramCheck = true;
-    extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ];
+    packages = [ ];
   };
 
   # Optimization settings and garbage collection automation
   nix = {
     settings = {
       auto-optimise-store = true;
-      experimental-features = [ "nix-command" "flakes" ];
-      substituters = ["https://hyprland.cachix.org"];
+      experimental-features = [
+        "nix-command"
+        "flakes"
+      ];
+      substituters = [ "https://hyprland.cachix.org" ];
       trusted-public-keys = [
         "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
       ];
     };
   };
 
-   # Set the default editor to vim
+  # Set the default editor to vim
   environment.variables = {
     EDITOR = "vim";
     POLKIT_BIN = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
-  };  
+  };
 
-# Some programs need SUID wrappers, can be configured further or are
+  # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
   # programs.gnupg.agent = {

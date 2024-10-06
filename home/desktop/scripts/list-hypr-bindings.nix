@@ -42,4 +42,3 @@ pkgs.writeShellScriptBin "list-hypr-bindings" ''
   " + mouse_up" "focuse previous workspace" "workspace, e-1" \
   ""
 ''
-

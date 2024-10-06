@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ ... }:
 
 {
   imports = [
@@ -13,6 +13,5 @@
     ./amd-gpu.nix
     ./virtualisation.nix
     ./programs.nix
-   # ./flatpak.nix
   ];
 }

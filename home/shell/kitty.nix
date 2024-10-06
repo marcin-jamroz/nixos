@@ -1,4 +1,4 @@
-{ config, ...}: 
+{ config, ... }:
 
 let
   palette = config.colorScheme.palette;
@@ -17,8 +17,8 @@ in
       hide_window_decorations = "yes";
     };
     keybindings = {
-        "ctrl+c" = "copy_or_interrupt";
-        "ctrl+v" = "paste_from_clipboard";
+      "ctrl+c" = "copy_or_interrupt";
+      "ctrl+v" = "paste_from_clipboard";
     };
     extraConfig = ''
       foreground #${palette.base05}

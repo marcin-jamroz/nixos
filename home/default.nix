@@ -1,4 +1,4 @@
-{ config, pkgs, gtkThemeFromScheme, inputs, ... }:
+{ inputs, ... }:
 
 {
 

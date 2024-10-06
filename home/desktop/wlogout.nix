@@ -1,9 +1,10 @@
-{ config, lib, pkgs, inputs, ... }:
+{ config, inputs, ... }:
 
 let
   palette = config.colorScheme.palette;
   hexToRgbString = inputs.nix-colors.lib.conversions.hexToRGBString;
-in {
+in
+{
   programs.wlogout = {
     enable = true;
     layout = [
@@ -42,64 +43,63 @@ in {
         "action" = "sleep 1; systemctl hibernate";
         "text" = "Hibernate";
         "keybind" = "h";
-  }
+      }
     ];
     style = ''
-      * {
-        font-family: "JetBrainsMono NF", FontAwesome, sans-serif;
-	background-image: none;
-	transition: 20ms;
-      }
-      window {
-	background-color: rgba(12, 12, 12, 0.1);
-      }
-      button {
-	color: #${palette.base06};
-        font-size:20px;
-        background-repeat: no-repeat;
-	background-position: center;
-	background-size: 25%;
-	border-style: solid;
-	background-color: rgba(${hexToRgbString ", " palette.base00}, 0.6); 
-	border: 3px solid #${palette.base05};
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-      }
-      button:focus, button:hover {
-          color: #${palette.base0E};
-	  background-color: rgba(${hexToRgbString ", " palette.base00}, 0.8);
-	  border: 3px solid #${palette.base0E};
-      }
-      #logout {
-	margin: 10px;
-	border-radius: 20px;
-	background-image: image(url("icons/logout.png"));
-      }
-      #suspend {
-	margin: 10px;
-	border-radius: 20px;
-	background-image: image(url("icons/suspend.png"));
-      }
-      #shutdown {
-	margin: 10px;
-	border-radius: 20px;
-	background-image: image(url("icons/shutdown.png"));
-      }
-      #reboot {
-	margin: 10px;
-	border-radius: 20px;
-	background-image: image(url("icons/reboot.png"));
-      }
-      #lock {
-	margin: 10px;
-	border-radius: 20px;
-	background-image: image(url("icons/lock.png"));
-      }
-      #hibernate {
-	margin: 10px;
-	border-radius: 20px;
-	background-image: image(url("icons/hibernate.png"));
-      }
+            * {
+              font-family: "JetBrainsMono NF", FontAwesome, sans-serif;
+      	background-image: none;
+      	transition: 20ms;
+            }
+            window {
+      	background-color: rgba(12, 12, 12, 0.1);
+            }
+            button {
+      	color: #${palette.base06};
+              font-size:20px;
+              background-repeat: no-repeat;
+      	background-position: center;
+      	background-size: 25%;
+      	border-style: solid;
+      	background-color: rgba(${hexToRgbString ", " palette.base00}, 0.6); 
+      	border: 3px solid #${palette.base05};
+              box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            }
+            button:focus, button:hover {
+                color: #${palette.base0E};
+      	  background-color: rgba(${hexToRgbString ", " palette.base00}, 0.8);
+      	  border: 3px solid #${palette.base0E};
+            }
+            #logout {
+      	margin: 10px;
+      	border-radius: 20px;
+      	background-image: image(url("icons/logout.png"));
+            }
+            #suspend {
+      	margin: 10px;
+      	border-radius: 20px;
+      	background-image: image(url("icons/suspend.png"));
+            }
+            #shutdown {
+      	margin: 10px;
+      	border-radius: 20px;
+      	background-image: image(url("icons/shutdown.png"));
+            }
+            #reboot {
+      	margin: 10px;
+      	border-radius: 20px;
+      	background-image: image(url("icons/reboot.png"));
+            }
+            #lock {
+      	margin: 10px;
+      	border-radius: 20px;
+      	background-image: image(url("icons/lock.png"));
+            }
+            #hibernate {
+      	margin: 10px;
+      	border-radius: 20px;
+      	background-image: image(url("icons/hibernate.png"));
+            }
     '';
   };
 }
-

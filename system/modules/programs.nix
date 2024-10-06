@@ -1,4 +1,4 @@
-{ pkgs, config, inputs, ... }:
+{ ... }:
 
 {
   programs = {
@@ -7,4 +7,3 @@
     mtr.enable = true;
   };
 }
-

@@ -1,4 +1,4 @@
-{ pkgs, config, lib, host, ... }:
+{ pkgs, ... }:
 
 {
   services.flatpak.enable = true;
@@ -10,5 +10,3 @@
     '';
   };
 }
-
-
