@@ -45,6 +45,7 @@
       xorg.libXcomposite
       xorg.libXcursor
       xorg.libXdamage
+      xorg.libXinerama
       xorg.libXext
       xorg.libXfixes
       xorg.libXi

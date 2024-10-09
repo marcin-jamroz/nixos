@@ -6,5 +6,6 @@
     discord
     vesktop
     protonup-qt
+    phoronix-test-suite
   ];
 }
