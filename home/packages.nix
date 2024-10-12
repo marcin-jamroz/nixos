@@ -9,5 +9,7 @@
     calibre
     libreoffice
     gedit
+    brave
+    android-tools
   ];
 }
