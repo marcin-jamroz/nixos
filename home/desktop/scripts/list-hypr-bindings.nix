@@ -18,7 +18,7 @@ pkgs.writeShellScriptBin "list-hypr-bindings" ''
   " + right mouse" "resize window" "resizewindow" \
   " + F" "toggle fullscreen" "fullscreen" \
   " + T" "launch termianal" "kitty" \
-  " + L" "lock screen" "swaylock" \
+  " + L" "lock screen" "loginctl lock-session" \
   " + S" "take a screenshot" "screenshot" \
   " + SHIFT + SPACE" "minimize" "movetoworkspace, special" \
   " + SPACE" "open minimized" "togglespecialworkspace" \
