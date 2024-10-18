@@ -24,5 +24,6 @@
     nh
     vim
     feh
+    usbutils
   ];
 }
