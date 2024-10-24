@@ -13,5 +13,6 @@
     ./amd-gpu.nix
     ./virtualisation.nix
     ./programs.nix
+    ./stylix.nix
   ];
 }

@@ -3,7 +3,6 @@
 {
 
   imports = [
-    inputs.nix-colors.homeManagerModules.default
     inputs.hyprland.homeManagerModules.default
     ./shell
     ./desktop
@@ -21,9 +20,6 @@
     TERMINAL = "kitty";
   };
 
-  # Set The Colorscheme
-  colorScheme = inputs.nix-colors.colorSchemes.dracula;
-
   programs.git = {
     enable = true;
     extraConfig = {
@@ -33,6 +29,10 @@
     };
     userName = "marcin-jamroz";
     userEmail = "17850284+marcin-jamroz@users.noreply.github.com";
+  };
+
+  stylix.targets = {
+    waybar.enable = false;
   };
 
   programs.home-manager.enable = true;

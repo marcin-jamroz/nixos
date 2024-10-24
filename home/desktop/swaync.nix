@@ -1,7 +1,7 @@
 { config, ... }:
 
 let
-  palette = config.colorScheme.palette;
+  palette = config.lib.stylix.colors;
 in
 {
   home.file.".config/swaync/config.json".text = ''

@@ -2,7 +2,7 @@
 
 {
   sddm-sugar-dark = stdenv.mkDerivation rec {
-    pname = "sddm-sugar-dark-theme";
+    pname = "cc";
     version = "1.2";
     dontBuild = true;
     installPhase = ''

@@ -1,8 +1,7 @@
-{ config, inputs, ... }:
+{ config, ... }:
 
 let
-  palette = config.colorScheme.palette;
-  hexToRgbString = inputs.nix-colors.lib.conversions.hexToRGBString;
+  palette = config.lib.stylix.colors;
 in
 {
   programs.hyprlock = {
@@ -16,7 +15,7 @@ in
         {
           monitor = "";
           path = "~/.config/hypr/hyprlock/nixos-1.png";
-          color = ''rgb(${hexToRgbString ", " palette.base02})'';
+          color = ''rgb(${palette.base02})''; # rgb
         }
       ];
 
@@ -24,14 +23,14 @@ in
         {
           monitor = "";
           placeholder_text = ''<span foreground="##${palette.base03}" style="italic">Input Password...</span>'';
-          inner_color = ''rgb(${hexToRgbString ", " palette.base05})'';
-          font_color = ''rgb(${hexToRgbString ", " palette.base00})'';
+          inner_color = ''rgb(${palette.base05})''; # rgb
+          font_color = ''rgb(${palette.base00})''; # rgb
           hide_input = false;
           fade_on_empty = false;
-          capslock_color = ''rgb(${hexToRgbString ", " palette.base08})'';
-          numlock_color = ''rgb(${hexToRgbString ", " palette.base08})'';
+          capslock_color = ''rgb(${palette.base08})''; # rgb
+          numlock_color = ''rgb(${palette.base08})''; # rgb
           outline_thickness = 3;
-          outer_color = ''rgb(${hexToRgbString ", " palette.base0C})'';
+          outer_color = ''rgb(${palette.base0C})''; # rgb
 
           size = "200, 50";
           position = "0, -415";
@@ -45,7 +44,7 @@ in
           monitor = "";
           text = ''Hi, <span foreground="##${palette.base08}" style="italic" weight="bold" font_size="large">$USER</span>'';
           text_align = "center";
-          color = ''rgb(${hexToRgbString ", " palette.base06})'';
+          color = ''rgb(${palette.base06})''; # rgb
 
           position = "0, -350";
           halign = "center";
@@ -54,7 +53,7 @@ in
         {
           monitor = "";
           text = "$TIME";
-          color = ''rgb(${hexToRgbString ", " palette.base0B})'';
+          color = ''rgb(${palette.base0B})''; # rgb
           font_size = 60;
 
           halign = "center";
@@ -64,7 +63,7 @@ in
         {
           monitor = "";
           text = ''cmd[] echo "<span foreground='##${palette.base0C}'>$(date '+%A, %e %B %Y')</span>"'';
-          color = ''rgb(${hexToRgbString ", " palette.base0C})'';
+          color = ''rgb(${palette.base0C})''; # rgb
           font_size = 25;
 
           halign = "center";

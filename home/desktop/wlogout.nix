@@ -1,8 +1,7 @@
-{ config, inputs, ... }:
+{ config, ... }:
 
 let
-  palette = config.colorScheme.palette;
-  hexToRgbString = inputs.nix-colors.lib.conversions.hexToRGBString;
+  palette = config.lib.stylix.colors;
 in
 {
   programs.wlogout = {
@@ -61,13 +60,13 @@ in
       	background-position: center;
       	background-size: 25%;
       	border-style: solid;
-      	background-color: rgba(${hexToRgbString ", " palette.base00}, 0.6); 
+      	background-color: rgba(${palette.base00-rgb-r}, ${palette.base00-rgb-g}, ${palette.base00-rgb-b}, 0.6); 
       	border: 3px solid #${palette.base05};
               box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
             }
             button:focus, button:hover {
                 color: #${palette.base0E};
-      	  background-color: rgba(${hexToRgbString ", " palette.base00}, 0.8);
+      	  background-color: rgba(${palette.base00-rgb-r},${palette.base00-rgb-g},${palette.base00-rgb-b}, 0.8);
       	  border: 3px solid #${palette.base0E};
             }
             #logout {

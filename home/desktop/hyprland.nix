@@ -2,11 +2,12 @@
   config,
   pkgs,
   inputs,
+  lib,
   ...
 }:
 
 let
-  theme = config.colorScheme.palette;
+  palette = config.lib.stylix.colors;
   split-workspaces = inputs.split-monitor-workspaces;
 in
 
@@ -82,8 +83,8 @@ in
         gaps_in = 6;
         gaps_out = 8;
         border_size = 2;
-        "col.active_border" = "rgba(${theme.base0C}ff) rgba(${theme.base0D}ff) rgba(${theme.base0B}ff) rgba(${theme.base0E}ff) 45deg";
-        "col.inactive_border" = "rgba(${theme.base00}cc) rgba(${theme.base01}cc) 45deg";
+        "col.active_border" = lib.mkForce "rgb(${palette.base0C}) rgb(${palette.base0D}) rgb(${palette.base0B}) rgb(${palette.base0E}) 45deg";
+        "col.inactive_border" = lib.mkForce "rgb(${palette.base00}) rgb(${palette.base01}) 45deg";
         layout = "dwindle";
         resize_on_border = true;
       };
@@ -133,11 +134,6 @@ in
           passes = 3;
           new_optimizations = "on";
           ignore_opacity = "on";
-        };
-      };
-      plugin = {
-        hyprtrails = {
-          color = "rgba(${theme.base0A}ff)";
         };
       };
       dwindle = {
