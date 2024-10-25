@@ -1,7 +1,7 @@
 { ... }:
 
 {
-  services.openssh.enable = true;
+  services.openssh.enable = false;
   services.fstrim.enable = true;
   services.flatpak.enable = true;
   services.pipewire = {
