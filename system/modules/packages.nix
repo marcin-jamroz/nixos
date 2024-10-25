@@ -9,7 +9,7 @@
     wget
     curl
     git
-    neofetch
+    fastfetch
     polkit_gnome
     lm_sensors
     unzip
