@@ -107,8 +107,8 @@
     POLKIT_BIN = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
   };
 
-  hardware.enableRedistributableFirmware = true;
-
+  # hardware.enableRedistributableFirmware = true;
+  # hardware.enableAllFirmware = true;
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
