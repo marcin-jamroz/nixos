@@ -127,7 +127,6 @@ in
         ];
       };
       decoration = {
-        drop_shadow = false;
         blur = {
           enabled = true;
           size = 5;

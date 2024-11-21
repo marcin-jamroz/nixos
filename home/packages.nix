@@ -6,7 +6,7 @@
     file-roller
     qbittorrent
     vlc
-    calibre
+    master.calibre
     libreoffice
     gedit
     brave

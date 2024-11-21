@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs-master.url = "github:NixOS/nixpkgs/master";
     home-manager = {
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -19,11 +20,19 @@
     {
       self,
       nixpkgs,
+      nixpkgs-master,
       home-manager,
       ...
     }@inputs:
     let
       system = "x86_64-linux";
+      overlay-master = final: prev: {
+        master = import nixpkgs-master {
+          inherit system;
+          config.allowUnfree = true;
+        };
+      };
+
     in
     {
       nixosConfigurations.marcin-jamroz = nixpkgs.lib.nixosSystem {
@@ -32,6 +41,13 @@
           inherit inputs;
         };
         modules = [
+          # Overlays-module makes "pkgs.unstable" available in configuration.nix
+          (
+            { ... }:
+            {
+              nixpkgs.overlays = [ overlay-master ];
+            }
+          )
           # Import the previous configuration.nix we used,
           # so the old configuration file still takes effect
           ./system
