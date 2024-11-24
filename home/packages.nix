@@ -6,10 +6,9 @@
     file-roller
     qbittorrent
     vlc
-    master.calibre
+    calibre
     libreoffice
     gedit
-    brave
     android-tools
   ];
 }

@@ -4,10 +4,12 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-master.url = "github:NixOS/nixpkgs/master";
+
     home-manager = {
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    # hyprland.url = "github:hyprwm/Hyprland?ref=v0.45.0";
     hyprland.url = "github:hyprwm/Hyprland";
     split-monitor-workspaces = {
       url = "github:Duckonaut/split-monitor-workspaces";
@@ -32,7 +34,6 @@
           config.allowUnfree = true;
         };
       };
-
     in
     {
       nixosConfigurations.marcin-jamroz = nixpkgs.lib.nixosSystem {
@@ -45,7 +46,9 @@
           (
             { ... }:
             {
-              nixpkgs.overlays = [ overlay-master ];
+              nixpkgs.overlays = [
+                overlay-master
+              ];
             }
           )
           # Import the previous configuration.nix we used,
