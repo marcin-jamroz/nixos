@@ -1,14 +1,11 @@
 {
   config,
-  pkgs,
-  inputs,
   lib,
   ...
 }:
 
 let
   palette = config.lib.stylix.colors;
-  split-workspaces = inputs.split-monitor-workspaces;
 in
 
 {
@@ -24,9 +21,6 @@ in
     xwayland.enable = true;
     systemd.variables = [ "--all" ];
     systemd.enable = true;
-    plugins = [
-      split-workspaces.packages.${pkgs.system}.split-monitor-workspaces
-    ];
     settings = {
       "$mod" = "SUPER";
       "$terminal" = "kitty";
@@ -41,12 +35,12 @@ in
       env = [
         "NIXOS_OZONE_WL, 1"
         "NIXPKGS_ALLOW_UNFREE, 1"
-        "XDG_CURRENT_DESKTOP, Hyprland"
-        "XDG_SESSION_TYPE, wayland"
-        "XDG_SESSION_DESKTOP, Hyprland"
         "GDK_BACKEND, wayland"
         "CLUTTER_BACKEND, wayland"
         "SDL_VIDEODRIVER, x11"
+        "XDG_CURRENT_DESKTOP, Hyprland"
+        "XDG_SESSION_TYPE, wayland"
+        "XDG_SESSION_DESKTOP, Hyprland"
         "QT_QPA_PLATFORM, wayland;xcb"
         "QT_WAYLAND_DISABLE_WINDOWDECORATION, 1"
         "QT_AUTO_SCREEN_SCALE_FACTOR, 1"
@@ -181,32 +175,32 @@ in
         "$mod, l, movefocus, r"
         "$mod, k, movefocus, u"
         "$mod, j, movefocus, d"
-        "$mod, 1, split-workspace, 1"
-        "$mod, 2, split-workspace, 2"
-        "$mod, 3, split-workspace, 3"
-        "$mod, 4, split-workspace, 4"
-        "$mod, 5, split-workspace, 5"
-        "$mod, 6, split-workspace, 6"
-        "$mod, 7, split-workspace, 7"
-        "$mod, 8, split-workspace, 8"
-        "$mod, 9, split-workspace, 9"
-        "$mod, 0, split-workspace, 10"
-        "$modSHIFT, 1, split-movetoworkspace, 1"
-        "$modSHIFT, 2, split-movetoworkspace, 2"
-        "$modSHIFT, 3, split-movetoworkspace, 3"
-        "$modSHIFT, 4, split-movetoworkspace, 4"
-        "$modSHIFT, 5, split-movetoworkspace, 5"
-        "$modSHIFT, 6, split-movetoworkspace, 6"
-        "$modSHIFT, 7, split-movetoworkspace, 7"
-        "$modSHIFT, 8, split-movetoworkspace, 8"
-        "$modSHIFT, 9, split-movetoworkspace, 9"
-        "$modSHIFT, 0, split-movetoworkspace, 10"
-        "$modCONTROL, right, split-workspace, r+1"
-        "$modCONTROL, left, split-workspace, r-1"
-        "$modCONTROLshift, right, split-movetoworkspace, r+1"
-        "$modCONTROLshift, left, split-movetoworkspace, r-1"
-        "$mod, mouse_down, split-workspace, r+1"
-        "$mod, mouse_up, split-workspace, r-1"
+        "$mod, 1, workspace, r~1"
+        "$mod, 2, workspace, r~2"
+        "$mod, 3, workspace, r~3"
+        "$mod, 4, workspace, r~4"
+        "$mod, 5, workspace, r~5"
+        "$mod, 6, workspace, r~6"
+        "$mod, 7, workspace, r~7"
+        "$mod, 8, workspace, r~8"
+        "$mod, 9, workspace, r~9"
+        "$mod, 0, workspace, r~10"
+        "$modSHIFT, 1, movetoworkspace, r~1"
+        "$modSHIFT, 2, movetoworkspace, r~2"
+        "$modSHIFT, 3, movetoworkspace, r~3"
+        "$modSHIFT, 4, movetoworkspace, r~4"
+        "$modSHIFT, 5, movetoworkspace, r~5"
+        "$modSHIFT, 6, movetoworkspace, r~6"
+        "$modSHIFT, 7, movetoworkspace, r~7"
+        "$modSHIFT, 8, movetoworkspace, r~8"
+        "$modSHIFT, 9, movetoworkspace, r~9"
+        "$modSHIFT, 0, movetoworkspace, r~10"
+        "$modCONTROL, right, workspace, r+1"
+        "$modCONTROL, left, workspace, r-1"
+        "$modCONTROLshift, right, movetoworkspace, r+1"
+        "$modCONTROLshift, left, movetoworkspace, r-1"
+        "$mod, mouse_down, workspace, r+1"
+        "$mod, mouse_up, workspace, r-1"
       ];
     };
   };
