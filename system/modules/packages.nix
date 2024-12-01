@@ -25,5 +25,7 @@
     vim
     feh
     usbutils
+    s-tui
+    stress
   ];
 }
