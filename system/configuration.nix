@@ -20,6 +20,9 @@
   boot.supportedFilesystems = [ "ntfs" ];
   boot.kernelModules = [ "nct6775" ];
   boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.extraModprobeConfig = ''
+    options btusb enable_autosuspend=n
+  '';
 
   networking.hostName = "marcin-jamroz"; # Define your hostname.
   networking.timeServers = options.networking.timeServers.default ++ [ "pool.ntp.org" ];
