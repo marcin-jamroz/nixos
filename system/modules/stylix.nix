@@ -21,7 +21,7 @@
         name = "DejaVu Sans";
       };
       monospace = {
-        package = pkgs.nerdfonts;
+        package = pkgs.nerd-fonts.fira-mono;
         name = "FiraMono Nerd Font Mono";
       };
 
