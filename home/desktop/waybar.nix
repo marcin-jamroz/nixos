@@ -24,7 +24,7 @@ with lib;
           "clock"
         ];
         modules-left = [
-          # "custom/startmenu" 
+          # "custom/startmenu"
           "hyprland/workspaces"
           "hyprland/window"
         ];
@@ -37,7 +37,7 @@ with lib;
           "temperature#gpu"
           "custom/gpu_fan"
           "memory"
-          # "network" 
+          # "network"
           "pulseaudio"
           "custom/hyprbindings"
           "hyprland/language"
@@ -85,25 +85,25 @@ with lib;
           tooltip = true;
         };
         "temperature#cpu" = {
-          hwmon-path = "/sys/class/hwmon/hwmon2/temp1_input";
+          hwmon-path = "/sys/class/hwmon/hwmon4/temp1_input";
         };
         "custom/cpu_fan" = {
           interval = 10;
           format = "{}r";
-          exec = "cpu-fan";
+          exec = "cat /sys/class/hwmon/hwmon3/fan1_input";
         };
         "custom/gpu_usage" = {
           interval = 10;
           format = "󰖺 {}%";
-          exec = "cat /sys/class/hwmon/hwmon6/device/gpu_busy_percent";
+          exec = "cat /sys/class/hwmon/hwmon0/device/gpu_busy_percent";
         };
         "temperature#gpu" = {
-          hwmon-path = "/sys/class/hwmon/hwmon6/temp2_input";
+          hwmon-path = "/sys/class/hwmon/hwmon0/temp2_input";
         };
         "custom/gpu_fan" = {
           interval = 10;
           format = "{}r";
-          exec = "cat /sys/class/hwmon/hwmon6/fan1_input";
+          exec = "cat /sys/class/hwmon/hwmon0/fan1_input";
         };
         "hyprland/window" = {
           max-length = 25;

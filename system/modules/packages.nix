@@ -27,5 +27,6 @@
     usbutils
     s-tui
     stress
+    clinfo
   ];
 }

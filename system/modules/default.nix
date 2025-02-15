@@ -14,5 +14,6 @@
     ./virtualisation.nix
     ./programs.nix
     ./stylix.nix
+    ./ollama.nix
   ];
 }
