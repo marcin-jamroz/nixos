@@ -35,6 +35,7 @@
     waybar.enable = false;
     #   hyprland.enable = false;
     hyprlock.enable = false;
+    qt.enable = false;
   };
 
   programs.home-manager.enable = true;
