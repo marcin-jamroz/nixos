@@ -1,6 +1,7 @@
-{ ... }:
+{ lib, ... }:
 
 {
+  systemd.user.services.hypridle.Unit.After = lib.mkForce "graphical-session.target";
   services.hypridle = {
     enable = true;
     settings = {

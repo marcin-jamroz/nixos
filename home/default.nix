@@ -1,9 +1,8 @@
-{ inputs, ... }:
+{ ... }:
 
 {
 
   imports = [
-    inputs.hyprland.homeManagerModules.default
     ./shell
     ./desktop
     ./game
@@ -33,7 +32,6 @@
 
   stylix.targets = {
     waybar.enable = false;
-    #   hyprland.enable = false;
     hyprlock.enable = false;
     qt.enable = false;
   };

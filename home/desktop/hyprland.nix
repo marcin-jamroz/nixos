@@ -6,8 +6,9 @@
 
 let
   palette = config.lib.stylix.colors;
+  runOnce = program: "pgrep ${program} || uwsm app -- ${program}";
+  run = program: "uwsm app -- ${program}";
 in
-
 {
   xdg = {
     userDirs = {
@@ -20,17 +21,17 @@ in
     enable = true;
     xwayland.enable = true;
     systemd.variables = [ "--all" ];
-    systemd.enable = true;
+    systemd.enable = false;
     settings = {
       "$mod" = "SUPER";
       "$terminal" = "kitty";
       exec-once = [
-        "$POLKIT_BIN"
-        "hyprpaper"
-        "waybar"
-        "swaync"
-        "nm-applet"
-        "blueman-applet"
+        "uwsm finalize"
+        "${runOnce "$POLKIT_BIN"}"
+        "${runOnce "waybar"}"
+        "${runOnce "swaync"}"
+        "${runOnce "nm-applet"}"
+        "${runOnce "blueman-applet"}"
       ];
       env = [
         "NIXOS_OZONE_WL, 1"
@@ -77,7 +78,8 @@ in
         gaps_in = 6;
         gaps_out = 8;
         border_size = 2;
-        "col.active_border" = lib.mkForce "rgb(${palette.base0C}) rgb(${palette.base0D}) rgb(${palette.base0B}) rgb(${palette.base0E}) 45deg";
+        "col.active_border" =
+          lib.mkForce "rgb(${palette.base0C}) rgb(${palette.base0D}) rgb(${palette.base0B}) rgb(${palette.base0E}) 45deg";
         "col.inactive_border" = lib.mkForce "rgb(${palette.base00}) rgb(${palette.base01}) 45deg";
         layout = "dwindle";
         resize_on_border = true;
@@ -147,16 +149,19 @@ in
         "$mod, mouse:273, resizewindow"
       ];
       bind = [
-        "$mod, F, fullscreen"
-        "$mod, T, exec, kitty"
+        "$mod, T, exec, ${run "kitty"}"
         "$mod, L, exec, loginctl lock-session"
-        "$mod, S, exec, screenshot"
-        "$modSHIFT, O, exec, hyprctl keyword monitor DP-1,preffered,2000x0,1"
-        "$mod, O, exec, hyprctl keyword monitor DP-1,preffered,1920x0,1"
-        "$modSHIFT, SPACE, movetoworkspace, special"
-        "$mod, SPACE, togglespecialworkspace"
+        "$mod, S, exec, ${runOnce "screenshot"}"
+
+        "$mod, F, fullscreen"
         "$mod, Q, killactive"
         "$mod, P, pseudo"
+
+        "$modSHIFT, O, exec, hyprctl keyword monitor DP-1,preffered,2000x0,1"
+        "$mod, O, exec, hyprctl keyword monitor DP-1,preffered,1920x0,1"
+
+        "$modSHIFT, SPACE, movetoworkspace, special"
+        "$mod, SPACE, togglespecialworkspace"
         "$modSHIFT, I, togglesplit"
         "$modSHIFT, F, togglefloating"
         "$modSHIFT, left, movewindow, l"
