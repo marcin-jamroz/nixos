@@ -28,5 +28,6 @@
     s-tui
     stress
     clinfo
+    killall
   ];
 }
