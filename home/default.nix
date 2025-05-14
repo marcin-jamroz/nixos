@@ -7,6 +7,7 @@
     ./desktop
     ./game
     ./code
+    ./programs
     ./packages.nix
   ];
 
