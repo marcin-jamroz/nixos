@@ -115,6 +115,7 @@ with lib;
         "hyprland/language" = {
           format-en = "us";
           format-pl = "pl";
+          on-click = "hyprctl switchxkblayout current next";
         };
         "memory" = {
           interval = 10;
