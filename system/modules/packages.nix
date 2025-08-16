@@ -23,11 +23,12 @@
     playerctl
     nh
     vim
-    feh
     usbutils
     s-tui
     stress
     clinfo
     killall
+    pinta
+    pix
   ];
 }
