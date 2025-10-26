@@ -11,7 +11,7 @@
     ./rofi.nix
     ./wlogout.nix
     ./swaync.nix
-    ./gtk-qt.nix
+    ./gtk.nix
 
     ./packages.nix
     ./files.nix

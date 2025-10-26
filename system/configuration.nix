@@ -53,6 +53,7 @@
   # Fonts
   fonts.packages = with pkgs; [
     nerd-fonts.fira-mono
+    noto-fonts-color-emoji
   ];
 
   # Enable the X11 windowing system.

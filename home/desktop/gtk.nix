@@ -18,11 +18,4 @@
       gtk-application-prefer-dark-theme = 1;
     };
   };
-
-  # Theme QT -> GTK
-  qt = {
-    enable = true;
-    style.name = "adwaita-dark";
-    platformTheme.name = "gtk3";
-  };
 }
