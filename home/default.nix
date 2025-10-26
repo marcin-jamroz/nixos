@@ -22,13 +22,15 @@
 
   programs.git = {
     enable = true;
-    extraConfig = {
+    settings = {
       init = {
         defaultBranch = "master";
       };
+      user = {
+        name = "marcin-jamroz";
+        email = "17850284+marcin-jamroz@users.noreply.github.com";
+      };
     };
-    userName = "marcin-jamroz";
-    userEmail = "17850284+marcin-jamroz@users.noreply.github.com";
   };
 
   stylix.targets = {
