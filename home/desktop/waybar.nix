@@ -197,7 +197,7 @@ with lib;
         };
         "custom/notification" = {
           tooltip = false;
-          format = "{icon} {}";
+          format = "{icon} {0}";
           format-icons = {
             notification = "<span foreground='red'><sup></sup></span>";
             none = "";
@@ -232,7 +232,7 @@ with lib;
       ''
               * {
         	font-size: 16px;
-        	font-family: JetBrainsMono Nerd Font, Font Awesome, sans-serif;
+        	font-family: Font Awesome, sans-serif;
             	font-weight: bold;
               }
               window#waybar {

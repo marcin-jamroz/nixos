@@ -46,7 +46,7 @@ in
     ];
     style = ''
             * {
-              font-family: "JetBrainsMono NF", FontAwesome, sans-serif;
+              font-family: FontAwesome, sans-serif;
       	background-image: none;
       	transition: 20ms;
             }
