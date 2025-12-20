@@ -3,8 +3,7 @@
 {
   services.ollama = {
     enable = true;
-    package = pkgs.master.ollama;
-    acceleration = "rocm";
+    package = pkgs.master.ollama-rocm;
     environmentVariables = {
       OLLAMA_FLASH_ATTENTION = "1";
       OLLAMA_NUM_PARALLEL = "1";
