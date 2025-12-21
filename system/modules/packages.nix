@@ -30,5 +30,6 @@
     killall
     pinta
     pix
+    ncdu
   ];
 }
