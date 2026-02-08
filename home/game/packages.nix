@@ -7,5 +7,6 @@
     vesktop
     protonup-qt
     phoronix-test-suite
+    rusty-path-of-building
   ];
 }
