@@ -25,7 +25,6 @@
     vim
     usbutils
     s-tui
-    stress
     clinfo
     killall
     pinta
