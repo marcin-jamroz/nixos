@@ -8,5 +8,6 @@
     protonup-qt
     phoronix-test-suite
     rusty-path-of-building
+    awakened-poe-trade
   ];
 }
