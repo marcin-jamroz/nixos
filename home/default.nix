@@ -31,6 +31,9 @@
         email = "17850284+marcin-jamroz@users.noreply.github.com";
       };
     };
+    signing = {
+      format = null;
+    };
   };
 
   stylix.targets = {
