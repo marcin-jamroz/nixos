@@ -15,5 +15,6 @@
     ./programs.nix
     ./stylix.nix
     ./ollama.nix
+    ./networking.nix
   ];
 }
