@@ -15,5 +15,7 @@
 
     ./packages.nix
     ./files.nix
+
+    ./uwsm.nix
   ];
 }

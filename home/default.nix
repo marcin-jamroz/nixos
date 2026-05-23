@@ -18,6 +18,7 @@
     EDITOR = "vim";
     BROWSER = "firefox";
     TERMINAL = "kitty";
+    NIXOS_OZONE_WL = "1";
   };
 
   programs.git = {
