@@ -22,6 +22,8 @@
     }@inputs:
     let
       system = "x86_64-linux";
+      username = "marcin-jamroz";
+
       overlay-master = final: prev: {
         master = import nixpkgs-master {
           inherit system;
@@ -30,10 +32,11 @@
       };
     in
     {
-      nixosConfigurations.marcin-jamroz = nixpkgs.lib.nixosSystem {
+      nixosConfigurations.${username} = nixpkgs.lib.nixosSystem {
         specialArgs = {
           inherit system;
           inherit inputs;
+          inherit username;
         };
         modules = [
           # Overlays-module makes "pkgs.unstable" available in configuration.nix
@@ -58,8 +61,9 @@
             home-manager.backupFileExtension = "backup";
             home-manager.extraSpecialArgs = {
               inherit inputs;
+              inherit username;
             };
-            home-manager.users.marcin-jamroz = import ./home;
+            home-manager.users.${username} = import ./home;
           }
         ];
       };

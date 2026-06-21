@@ -1,4 +1,4 @@
-{ ... }:
+{ username, ... }:
 
 {
 
@@ -11,8 +11,8 @@
     ./packages.nix
   ];
 
-  home.username = "marcin-jamroz";
-  home.homeDirectory = "/home/marcin-jamroz";
+  home.username = username;
+  home.homeDirectory = "/home/${username}";
   home.stateVersion = "23.11";
   home.sessionVariables = {
     EDITOR = "vim";

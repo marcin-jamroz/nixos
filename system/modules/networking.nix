@@ -1,8 +1,8 @@
-{ options, ... }:
+{ options, username, ... }:
 
 {
   networking = {
-    hostName = "marcin-jamroz"; # Define your hostname.
+    hostName = username;
 
     timeServers = options.networking.timeServers.default ++ [ "pool.ntp.org" ];
 

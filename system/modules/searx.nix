@@ -1,9 +1,9 @@
-{ ... }:
+{ username, ... }:
 {
   services.searx = {
     enable = true;
     redisCreateLocally = true;
-    environmentFile = "/home/marcin-jamroz/.config/searxng/searxng.env";
+    environmentFile = "/home/${username}/.config/searxng/searxng.env";
     settings = {
       server = {
         port = "8888";

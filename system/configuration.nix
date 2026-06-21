@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ pkgs, ... }:
+{ pkgs, username, ... }:
 
 {
   imports = [
@@ -65,7 +65,7 @@
   users.defaultUserShell = pkgs.zsh;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.marcin-jamroz = {
+  users.users.${username} = {
     isNormalUser = true;
     description = "Marcin Jamroz";
     ignoreShellProgramCheck = true;
