@@ -16,5 +16,6 @@
     ./stylix.nix
     ./ollama.nix
     ./networking.nix
+    ./searx.nix
   ];
 }

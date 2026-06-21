@@ -109,6 +109,7 @@ hl.bind(mod .. " + L", hl.dsp.exec_cmd("loginctl lock-session"))
 hl.bind(mod .. " + S", runOnceDsp("screenshot"))
 hl.bind(mod .. " + F", hl.dsp.window.fullscreen())
 hl.bind(mod .. " + Q", hl.dsp.window.kill())
+hl.bind(mod .. " + W", hl.dsp.window.close())
 hl.bind(mod .. " + P", hl.dsp.window.pseudo())
 
 
