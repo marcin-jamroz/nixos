@@ -1,5 +1,6 @@
 {
   pkgs,
+  lib,
   ...
 }:
 
@@ -15,7 +16,7 @@
       gtk-application-prefer-dark-theme = 1;
     };
     gtk4 = {
-      theme = null;
+      theme = lib.mkForce null;
       extraConfig = {
         gtk-application-prefer-dark-theme = 1;
       };
