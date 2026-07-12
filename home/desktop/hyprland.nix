@@ -33,24 +33,6 @@ in
       createDirectories = true;
       setSessionVariables = false;
     };
-    portal = {
-      enable = true;
-      extraPortals = with pkgs.master; [
-        xdg-desktop-portal-hyprland
-        xdg-desktop-portal-gtk
-        kdePackages.xdg-desktop-portal-kde
-      ];
-      # xdgOpenUsePortal = true;
-      configPackages = [ config.wayland.windowManager.hyprland.package ];
-      config.hyprland = {
-        default = [
-          "hyprland"
-          "gtk"
-        ];
-        "org.freedesktop.impl.portal.FileChooser" = "kde";
-        "org.freedesktop.impl.portal.Print" = "kde";
-      };
-    };
   };
 
   wayland.windowManager.hyprland = {
@@ -58,7 +40,8 @@ in
     xwayland.enable = true;
     systemd.variables = [ "--all" ];
     systemd.enable = false;
-    package = pkgs.master.hyprland;
+    package = null;
+    portalPackage = null;
     configType = "lua";
     importantPrefixes = [ ];
     settings = {
