@@ -17,5 +17,7 @@
     ./files.nix
 
     ./uwsm.nix
+
+    ./scripts
   ];
 }

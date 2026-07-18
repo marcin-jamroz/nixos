@@ -14,6 +14,7 @@
   home.username = username;
   home.homeDirectory = "/home/${username}";
   home.stateVersion = "23.11";
+  home.pointerCursor.enable = true;
   home.sessionVariables = {
     EDITOR = "vim";
     BROWSER = "firefox";

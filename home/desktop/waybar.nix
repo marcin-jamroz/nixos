@@ -85,25 +85,29 @@ with lib;
           tooltip = true;
         };
         "temperature#cpu" = {
-          hwmon-path = "/sys/class/hwmon/hwmon4/temp1_input";
+          interval = 10;
+          hwmon-path-abs = "/sys/devices/pci0000:00/0000:00:18.3/hwmon";
+          input-filename = "temp1_input";
         };
         "custom/cpu_fan" = {
           interval = 10;
           format = "{}r";
-          exec = "cat /sys/class/hwmon/hwmon3/fan1_input";
+          exec = "cat /sys/devices/platform/nct6775.656/hwmon/hwmon*/fan1_input";
         };
         "custom/gpu_usage" = {
           interval = 10;
           format = "󰖺 {}%";
-          exec = "cat /sys/class/hwmon/hwmon0/device/gpu_busy_percent";
+          exec = "cat /sys/devices/pci0000:00/0000:00:01.1/0000:01:00.0/0000:02:00.0/0000:03:00.0/hwmon/hwmon*/device/gpu_busy_percent";
         };
         "temperature#gpu" = {
-          hwmon-path = "/sys/class/hwmon/hwmon0/temp2_input";
+          interval = 10;
+          hwmon-path-abs = "/sys/devices/pci0000:00/0000:00:01.1/0000:01:00.0/0000:02:00.0/0000:03:00.0/hwmon";
+          input-filename = "temp2_input";
         };
         "custom/gpu_fan" = {
           interval = 10;
           format = "{}r";
-          exec = "cat /sys/class/hwmon/hwmon0/fan1_input";
+          exec = "cat /sys/devices/pci0000:00/0000:00:01.1/0000:01:00.0/0000:02:00.0/0000:03:00.0/hwmon/hwmon*/fan1_input";
         };
         "hyprland/window" = {
           max-length = 25;
