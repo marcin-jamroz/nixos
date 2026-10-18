@@ -150,18 +150,20 @@ with lib;
         };
         "pulseaudio" = {
           format = "{icon} {volume}% {format_source}";
-          format-bluetooth = "{volume}% {icon} {format_source}";
-          format-bluetooth-muted = " {icon} {format_source}";
-          format-muted = " {format_source}";
+          format-muted = "{icon} {format_source}";
+          format-bluetooth = "{icon}  {volume}% {format_source}";
+          format-bluetooth-muted = "{icon}  {format_source}";
           format-source = " {volume}%";
           format-source-muted = "";
           format-icons = {
             headphone = "";
-            hands-free = "";
-            headset = "";
+            headphone-muted = "󰟎";
+            hands-free = "";
+            headset = "";
             phone = "";
             portable = "";
             car = "";
+            default-muted = "󰝟";
             default = [
               ""
               ""
@@ -408,11 +410,12 @@ with lib;
         	border-radius: 10px;
               }
               #pulseaudio {
-            	color: #${palette.base0C};
-        	background: #${palette.base01};
-        	margin: 4px;
-        	padding: 2px 10px;
-        	border-radius: 10px;
+            	  color: #${palette.base0C};
+        	      background: #${palette.base01};
+        	      margin: 4px;
+        	      padding: 2px 10px;
+        	      border-radius: 10px;
+                font-size: 16px;
               }
               #custom-notification {
             	color: #${palette.base0D};
