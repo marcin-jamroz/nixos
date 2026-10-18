@@ -3,7 +3,7 @@
 {
   programs.rofi = {
     enable = true;
-    extraConfig = {
+    settings = {
       modes = "window,drun,run,combi";
       combi-modes = "window,drun,run";
     };
