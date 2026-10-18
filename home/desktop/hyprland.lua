@@ -81,7 +81,7 @@ hl.curve("easeInElastic", { type = "bezier", points = { { 0.7, -0.6 }, { 0.3, 1.
 hl.curve("easeInElastic", { type = "spring", mass = 1.0, stiffness = 120, dampening = 8 })
 
 -- hl.animation({ leaf = "windows", enabled = true, speed = 10, bezier = "easeInElastic" })
-hl.animation({ leaf = "windows", enabled = true, speed = 10, spring = "easeInElastic" })
+-- hl.animation({ leaf = "windows", enabled = true, speed = 10, spring = "easeInElastic" })
 
 -- GENERAL --
 local mod = "SUPER"
